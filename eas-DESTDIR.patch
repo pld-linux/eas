@@ -1,0 +1,33 @@
+--- eas-2.0.00/src/Makefile.am	2006-06-01 02:24:48.494038359 +0300
++++ eas-2.0.00/src/Makefile.am	2006-06-01 03:27:45.368625136 +0300
+@@ -49,17 +49,17 @@
+ EXTRA_DIST=eash_config.in easd_config.in client.pem root.pem server.pem detailed.css report.css
+ 
+ config-setup:
+-	test -d "$(sysconfdir)" || ( mkdir -p "$(DESTDIR)$(sysconfdir)" && chmod 700 "$(DESTDIR)$(sysconfdir)" )
+-	test -f "$(sysconfdir)/eash_config" || ( cp eash_config "$(DESTDIR)$(sysconfdir)/eash_config" && chmod 400 "$(DESTDIR)$(sysconfdir)/eash_config" )
+-	test -f "$(sysconfdir)/easd_config" || ( cp easd_config "$(DESTDIR)$(sysconfdir)/easd_config" && chmod 400 "$(DESTDIR)$(sysconfdir)/easd_config" )
+-	test -d "$(CA_DIR)" || ( mkdir -p "$(DESTDIR)$(CA_DIR)" && chmod 700 "$(DESTDIR)$(CA_DIR)" )
+-	test -f "$(CA_DIR)/root.pem" || ( cp root.pem "$(DESTDIR)$(CA_DIR)/root.pem" && chmod 400 "$(DESTDIR)$(CA_DIR)/root.pem" )
+-	test -f "$(CA_DIR)/client.pem" || ( cp client.pem "$(DESTDIR)$(CA_DIR)/client.pem" && chmod 400 "$(DESTDIR)$(CA_DIR)/client.pem" )
+-	test -f "$(CA_DIR)/server.pem" || ( cp server.pem "$(DESTDIR)$(CA_DIR)/server.pem" && chmod 400 "$(DESTDIR)$(CA_DIR)/server.pem" )
++	test -d "$(DESTDIR)$(sysconfdir)" || ( mkdir -p "$(DESTDIR)$(sysconfdir)" && chmod 700 "$(DESTDIR)$(sysconfdir)" )
++	test -f "$(DESTDIR)$(sysconfdir)/eash_config" || ( cp eash_config "$(DESTDIR)$(sysconfdir)/eash_config" && chmod 400 "$(DESTDIR)$(sysconfdir)/eash_config" )
++	test -f "$(DESTDIR)$(sysconfdir)/easd_config" || ( cp easd_config "$(DESTDIR)$(sysconfdir)/easd_config" && chmod 400 "$(DESTDIR)$(sysconfdir)/easd_config" )
++	test -d "$(DESTDIR)$(CA_DIR)" || ( mkdir -p "$(DESTDIR)$(CA_DIR)" && chmod 700 "$(DESTDIR)$(CA_DIR)" )
++	test -f "$(DESTDIR)$(CA_DIR)/root.pem" || ( cp root.pem "$(DESTDIR)$(CA_DIR)/root.pem" && chmod 400 "$(DESTDIR)$(CA_DIR)/root.pem" )
++	test -f "$(DESTDIR)$(CA_DIR)/client.pem" || ( cp client.pem "$(DESTDIR)$(CA_DIR)/client.pem" && chmod 400 "$(DESTDIR)$(CA_DIR)/client.pem" )
++	test -f "$(DESTDIR)$(CA_DIR)/server.pem" || ( cp server.pem "$(DESTDIR)$(CA_DIR)/server.pem" && chmod 400 "$(DESTDIR)$(CA_DIR)/server.pem" )
+ 	echo $(CA_DIR)
+-	test -d "$(sysconfdir)/css" || ( mkdir -p "$(DESTDIR)$(sysconfdir)/css" && chmod 700 "$(DESTDIR)$(sysconfdir)/css" )
+-	test -f "$(sysconfdir)/css/report.css" || ( cp report.css "$(DESTDIR)$(sysconfdir)/css/report.css" && chmod 400 "$(DESTDIR)$(sysconfdir)/css/report.css" )
+-	test -f "$(sysconfdir)/css/detailed.css" || ( cp detailed.css "$(DESTDIR)$(sysconfdir)/css/detailed.css" && chmod 400 "$(DESTDIR)$(sysconfdir)/css/detailed.css" )
++	test -d "$(DESTDIR)$(sysconfdir)/css" || ( mkdir -p "$(DESTDIR)$(sysconfdir)/css" && chmod 700 "$(DESTDIR)$(sysconfdir)/css" )
++	test -f "$(DESTDIR)$(sysconfdir)/css/report.css" || ( cp report.css "$(DESTDIR)$(sysconfdir)/css/report.css" && chmod 400 "$(DESTDIR)$(sysconfdir)/css/report.css" )
++	test -f "$(DESTDIR)$(sysconfdir)/css/detailed.css" || ( cp detailed.css "$(DESTDIR)$(sysconfdir)/css/detailed.css" && chmod 400 "$(DESTDIR)$(sysconfdir)/css/detailed.css" )
+ 
+ config-perms:
+ 	test -f "$(bindir)/eash" && ( chown 0:0 "$(bindir)/eash" && chmod 4555 "$(bindir)/eash" )
+@@ -73 +73 @@
+-install: install-am config-setup config-perms
++install: install-am config-setup
