@@ -1,4 +1,5 @@
 Summary:	Enterprise Audit Shell (EAS)
+Summary(pl):	Enterprise Audit Shell (EAS) - pow³oka z audytem
 Name:		eas
 Version:	2.0.00
 Release:	0.1
@@ -23,6 +24,14 @@ archive and reporting server. Client server authentication and
 encryption is handled by SSL. EAS was specifically designed for
 enterprise, commercial use.
 
+%description -l pl
+EAS pozwala organizacjom na centraln± kontrolê i zg³aszanie dostêpu
+do pow³oki uniksowej. W przeciwieñstwie do Sudosh logi audytowe s±
+wysy³ane do scentralizowanego archiwum i na serwer zg³oszeniowy.
+Uwierzytelnianie klient-serwer i szyfrowanie jest obs³ugiwane przez
+SSL. EAS zosta³ zaprojektowany szczególnie do firmowego, komercyjnego
+u¿ytku.
+
 %prep
 %setup -q
 %patch0 -p1
@@ -38,7 +47,6 @@ enterprise, commercial use.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-
 install -d $RPM_BUILD_ROOT/var/log/%{name}
 
 %{__make} install -j1 \
