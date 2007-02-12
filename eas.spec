@@ -1,5 +1,5 @@
 Summary:	Enterprise Audit Shell (EAS)
-Summary(pl.UTF-8):   Enterprise Audit Shell (EAS) - powłoka z audytem
+Summary(pl.UTF-8):	Enterprise Audit Shell (EAS) - powłoka z audytem
 Name:		eas
 Version:	2.0.00
 Release:	0.1
